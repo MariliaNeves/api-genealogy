@@ -1,6 +1,6 @@
-# Nome do Projeto
+# API de arvore genealogica
 
-Descrição curta do projeto e do que ele faz.
+Esta é uma API simples em Go para gerenciar informações de pessoas e seus respectivos parentescos.
 
 ## Pré-requisitos
 
@@ -12,8 +12,8 @@ Descrição curta do projeto e do que ele faz.
 
 1. Clone o repositório:
     ```sh
-    git clone https://github.com/usuario/nome-do-projeto.git
-    cd nome-do-projeto
+    git clone https://github.com/MariliaNeves/api-genealogy
+    cd api-genealogy
     ```
 
 2. Instale as dependências:
@@ -21,31 +21,9 @@ Descrição curta do projeto e do que ele faz.
     go mod tidy
     ```
 
-3. Configure as variáveis de ambiente (exemplo com `.env`):
-    ```sh
-    cp .env.example .env
-    ```
-
-4. Execute a aplicação:
+3. Execute a aplicação:
     ```sh
     go run main.go
     ```
 
-## Uso
 
-### Rotas da API
-
-| Método | Rota                | Descrição                             |
-|--------|---------------------|---------------------------------------|
-| GET    | `/api/v1/resource`  | Lista todos os recursos               |
-| GET    | `/api/v1/resource/{id}` | Obtém um recurso específico pelo ID  |
-| POST   | `/api/v1/resource`  | Cria um novo recurso                  |
-| PUT    | `/api/v1/resource/{id}` | Atualiza um recurso específico pelo ID |
-| DELETE | `/api/v1/resource/{id}` | Remove um recurso específico pelo ID  |
-
-### Exemplo de Requisição
-
-#### GET /api/v1/resource
-
-```sh
-curl -X GET http://localhost:8080/api/v1/resource
