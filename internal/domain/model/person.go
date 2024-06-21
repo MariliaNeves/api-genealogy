@@ -1,9 +1,9 @@
 package model
 
-import (
-	"fmt"
-)
+import "go.mongodb.org/mongo-driver/bson/primitive"
 
-func main() {
-	fmt.Println("Hello, World!")
+type Person struct {
+	ID             primitive.ObjectID `bson:"_id,omitempty"`
+	Name           string             `bson:"name,omitempty"`
+	RelationshipID primitive.ObjectID `bson:"relationship,omitempty"`
 }
