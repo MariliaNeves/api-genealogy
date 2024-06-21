@@ -1,0 +1,34 @@
+version: '1.0'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    depends_on:
+      - mongodb
+    ports:
+      - "8080:8080"
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGODB_GENEALOGY_DB}
+      MONGODB_USER_COLLECTION: =${MONGODB_USER_COLLECTION}
+      MONGODB_PERSON_COLLECTION: =${MONGODB_PERSON_COLLECTION}
+      MONGODB_RELATIONSHIP_COLLECTION: =${MONGODB_RELATIONSHIP_COLLECTION}
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
+
+
+
