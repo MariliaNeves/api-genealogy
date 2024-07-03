@@ -5,8 +5,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/MariliaNeves/api-genealogy/internal/domain/model"
-	"github.com/MariliaNeves/api-genealogy/internal/domain/repository"
+	"github.com/MariliaNeves/api-genealogy/src/domain/model"
+	"github.com/MariliaNeves/api-genealogy/src/domain/repository"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -38,20 +38,20 @@ func (r *relationshipRepository) Create(relationship model.Relationship) (model.
 }
 
 func (r *relationshipRepository) GetAll() ([]model.Relationship, error) {
-	var people []model.Relationship
+	var relationships []model.Relationship
 	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
 	defer cancel()
 	cursor, err := r.collection.Find(ctx, bson.M{})
 	if err != nil {
-		return people, err
+		return relationships, err
 	}
 	defer cursor.Close(ctx)
 	for cursor.Next(ctx) {
 		var relationship model.Relationship
 		cursor.Decode(&relationship)
-		people = append(people, relationship)
+		relationships = append(relationships, relationship)
 	}
-	return people, nil
+	return relationships, nil
 }
 
 func (r *relationshipRepository) GetByID(id string) (model.Relationship, error) {

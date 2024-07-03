@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/MariliaNeves/api-genealogy/internal/domain/model"
-	"github.com/MariliaNeves/api-genealogy/internal/usecase"
+	"github.com/MariliaNeves/api-genealogy/src/domain/model"
+	"github.com/MariliaNeves/api-genealogy/src/usecase"
 
 	"github.com/gorilla/mux"
 )

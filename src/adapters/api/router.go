@@ -1,8 +1,8 @@
 package api
 
 import (
-	"github.com/MariliaNeves/api-genealogy/internal/adapters/api/handlers"
-	"github.com/MariliaNeves/api-genealogy/internal/usecase"
+	"github.com/MariliaNeves/api-genealogy/src/adapters/api/handlers"
+	"github.com/MariliaNeves/api-genealogy/src/usecase"
 
 	"github.com/gorilla/mux"
 )

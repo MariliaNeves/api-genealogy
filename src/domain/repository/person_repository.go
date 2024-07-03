@@ -1,6 +1,6 @@
 package repository
 
-import "github.com/MariliaNeves/api-genealogy/internal/domain/model"
+import "github.com/MariliaNeves/api-genealogy/src/domain/model"
 
 type PersonRepository interface {
 	Create(person model.Person) (model.Person, error)

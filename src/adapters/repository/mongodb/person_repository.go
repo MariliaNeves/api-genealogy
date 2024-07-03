@@ -5,8 +5,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/MariliaNeves/api-genealogy/internal/domain/model"
-	"github.com/MariliaNeves/api-genealogy/internal/domain/repository"
+	"github.com/MariliaNeves/api-genealogy/src/domain/model"
+	"github.com/MariliaNeves/api-genealogy/src/domain/repository"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"

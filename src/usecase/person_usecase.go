@@ -1,14 +1,14 @@
 package usecase
 
 import (
-	"github.com/MariliaNeves/api-genealogy/internal/domain/model"
-	"github.com/MariliaNeves/api-genealogy/internal/domain/repository"
+	"github.com/MariliaNeves/api-genealogy/src/domain/model"
+	"github.com/MariliaNeves/api-genealogy/src/domain/repository"
 )
 
 type PersonUsecase interface {
 	CreatePerson(person model.Person) (model.Person, error)
 	GetPeople() ([]model.Person, error)
-	GetPerson(id string) (model.Person, error)
+	GetPerson(id string) (model.Person, error)	
 	UpdatePerson(id string, person model.Person) (model.Person, error)
 	DeletePerson(id string) error
 }

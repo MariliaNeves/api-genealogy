@@ -1,13 +1,13 @@
 package usecase
 
 import (
-	"github.com/MariliaNeves/api-genealogy/internal/domain/model"
-	"github.com/MariliaNeves/api-genealogy/internal/domain/repository"
+	"github.com/MariliaNeves/api-genealogy/src/domain/model"
+	"github.com/MariliaNeves/api-genealogy/src/domain/repository"
 )
 
 type RelationshipUsecase interface {
 	CreateRelationship(relationship model.Relationship) (model.Relationship, error)
-	GetPeople() ([]model.Relationship, error)
+	GetRelationships() ([]model.Relationship, error)
 	GetRelationship(id string) (model.Relationship, error)
 	UpdateRelationship(id string, relationship model.Relationship) (model.Relationship, error)
 	DeleteRelationship(id string) error
@@ -25,7 +25,7 @@ func (u *relationshipUsecase) CreateRelationship(relationship model.Relationship
 	return u.relationshipRepo.Create(relationship)
 }
 
-func (u *relationshipUsecase) GetPeople() ([]model.Relationship, error) {
+func (u *relationshipUsecase) GetRelationships() ([]model.Relationship, error) {
 	return u.relationshipRepo.GetAll()
 }
 

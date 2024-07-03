@@ -5,11 +5,11 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/MariliaNeves/api-genealogy/internal/adapters/api"
-	"github.com/MariliaNeves/api-genealogy/internal/adapters/repository/mongodb"
-	"github.com/MariliaNeves/api-genealogy/internal/usecase"
-	"github.com/MariliaNeves/api-genealogy/server/config"
-	"github.com/MariliaNeves/api-genealogy/server/config/logger"
+	"github.com/MariliaNeves/api-genealogy/config"
+	"github.com/MariliaNeves/api-genealogy/config/logger"
+	"github.com/MariliaNeves/api-genealogy/src/adapters/api"
+	"github.com/MariliaNeves/api-genealogy/src/adapters/repository/mongodb"
+	"github.com/MariliaNeves/api-genealogy/src/usecase"
 	"github.com/joho/godotenv"
 )
 
