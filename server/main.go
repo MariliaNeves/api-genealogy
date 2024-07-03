@@ -10,10 +10,15 @@ import (
 	"github.com/MariliaNeves/api-genealogy/internal/usecase"
 	"github.com/MariliaNeves/api-genealogy/server/config"
 	"github.com/MariliaNeves/api-genealogy/server/config/logger"
+	"github.com/joho/godotenv"
 )
 
 func main() {
 	logger.Info("Start App")
+	err := godotenv.Load()
+	if err != nil {
+		logger.Error("Error loading .env file", err)
+	}
 
 	db, err := config.NewMongoDBConnection(context.Background())
 	if err != nil {

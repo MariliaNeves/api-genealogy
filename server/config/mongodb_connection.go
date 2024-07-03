@@ -5,7 +5,6 @@ import (
 	"os"
 
 	"github.com/MariliaNeves/api-genealogy/server/config/logger"
-	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -19,7 +18,6 @@ var (
 
 func NewMongoDBConnection(ctx context.Context) (*mongo.Database, error) {
 
-	godotenv.Load()
 	mongodbURI := os.Getenv(MONGODB_URL)
 	mongodbDatabase := os.Getenv(MONGODB_GENEALOGY_DB)
 	mongodbUsername := os.Getenv(MONGODB_USERNAME)

@@ -2,6 +2,7 @@ package mongodb
 
 import (
 	"context"
+	"os"
 	"time"
 
 	"github.com/MariliaNeves/api-genealogy/internal/domain/model"
@@ -21,7 +22,8 @@ type personRepository struct {
 }
 
 func NewPersonRepository(db *mongo.Database) repository.PersonRepository {
-	return &personRepository{collection: db.Collection(MONGODB_PERSON_COLLECTION)}
+	collection_name := os.Getenv(MONGODB_PERSON_COLLECTION)
+	return &personRepository{collection: db.Collection(collection_name)}
 }
 
 func (r *personRepository) Create(person model.Person) (model.Person, error) {

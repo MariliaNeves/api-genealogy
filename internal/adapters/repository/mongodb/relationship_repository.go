@@ -1,7 +1,8 @@
- package mongodb
+package mongodb
 
 import (
 	"context"
+	"os"
 	"time"
 
 	"github.com/MariliaNeves/api-genealogy/internal/domain/model"
@@ -21,7 +22,8 @@ type relationshipRepository struct {
 }
 
 func NewRelationshipRepository(db *mongo.Database) repository.RelationshipRepository {
-	return &relationshipRepository{collection: db.Collection(MONGODB_RELATIONSHIP_COLLECTION)}
+	collection_name := os.Getenv(MONGODB_RELATIONSHIP_COLLECTION)
+	return &relationshipRepository{collection: db.Collection(collection_name)}
 }
 
 func (r *relationshipRepository) Create(relationship model.Relationship) (model.Relationship, error) {
